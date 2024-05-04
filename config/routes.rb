@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'policies/privacy-policy'
+  get 'policies/refund-policy'
+  get 'policies/shipping-policy'
+  get 'policies/terms-of-service'
   resources :products, only: %i[show], param: :handle
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
