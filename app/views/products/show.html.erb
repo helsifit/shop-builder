@@ -1,4 +1,4 @@
-<section id="best-seller" class="bg-gray-100 dark:bg-black py-8 widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-16 p-6">
+<section class="bg-gray-100 dark:bg-black py-8 widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-16 p-6">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row -mx-4">
       <div class="md:flex-1 px-4">
@@ -53,14 +53,13 @@
               </svg>
             </button>
           </div>
-          <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Please select a 5 digit number from 0 to 9.</p>
+          <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Limited stock! 🔥 6 people are viewing this and 4 recently purchased it.</p>
         </div>
-        <p>Limited stock! 🔥 6 people are viewing this and 4 recently purchased it.</p>
         <div class="w-full -mx-2 mb-8 px-2 pt-4">
           <button class="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add to Cart</button>
         </div>
         <div>
-          <%= render "ab_roller" %>
+          <%= render "products_descriptions/#{@product.handle}" %>
         </div>
       </div>
     </div>

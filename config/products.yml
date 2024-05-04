@@ -1,0 +1,35 @@
+ab-roller:
+  title: "HelsiFit™ Ab Roller Wheel Automatic Rebound With Elbow Support"
+  branded: true
+  sale: true
+  featuring_product: true
+  limited_stock_message: true
+  colors:
+    - Blue
+    - Orange
+  price:
+    USD: 6999
+    GBP: 5499
+    AUD: 10699
+    CAD: 9399
+    EUR: 6499
+    NZD: 11499
+push-up-board:
+  title: "HelsiFit™ Multifunctional Push-Up Board 14-in-1"
+  branded: true
+  sale: true
+  price:
+    USD: 4599
+    GBP: 3599
+    AUD: 6999
+    CAD: 6199
+    EUR: 4299
+    NZD: 7499
+fascial-massage-electric-massager-gun:
+  title: Fascial Massage Electric Massager Gun
+  price:
+    GBP: 7599
+iron-leg-stretcher-3-bar-legs-extension-split-machine:
+  title: Iron Leg Stretcher 3 Bar Legs Extension Split Machine
+  price:
+    GBP: 3799

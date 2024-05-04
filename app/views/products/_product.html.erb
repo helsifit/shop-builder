@@ -1,0 +1,18 @@
+<div class="bg-white rounded-2xl cursor-pointer hover:-translate-y-2 transition-all relative">
+  <a href="<%= product_path(product) %>">
+    <%= render "products/sale_badge" if product.sale %>
+    <div class="w-11/12 h-[210px] overflow-hidden mx-auto aspect-w-16 aspect-h-8 mb-1">
+      <img src="<%= product.first_image_src %>" alt="<%= product.title %>"
+        class="h-full w-full object-contain" />
+    </div>
+    <div class="px-2 pb-2 mx-auto">
+      <h3 class="font-bold text-gray-800"><%= product.title %></h3>
+      <h4 class="text-gray-800 mt-4 mb-4">
+        <% if product.sale %>
+          <span class="text-gray-300 line-through">£<%= product.outdated_price %>&nbsp;GBP</span>
+        <% end %>
+        £<%= product.price["GBP"].to_f / 100 %>&nbsp;GBP
+      </h4>
+    </div>
+  </a>
+</div>

@@ -1,0 +1,69 @@
+<hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+<section id="best-seller" class="bg-gray-100 dark:bg-black py-8 widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-16 p-6">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row -mx-4">
+      <div class="md:flex-1 px-4">
+        <div class="h-[460px] rounded-lg mb-2">
+          <%= render "products/carousel" %>
+        </div>
+        <div class="flex -mx-2 mb-4">
+          <div class="w-1/2 px-2">
+            <button class="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add to Cart</button>
+          </div>
+          <div class="w-1/2 px-2">
+            <button class="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">Add to Wishlist</button>
+          </div>
+        </div>
+      </div>
+      <div class="md:flex-1 px-4">
+        <a href="<%= product_path(product) %>">
+          <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-2">HelsiFit™ Ab Roller Wheel Automatic Rebound With Elbow Support</h1>
+        </a>
+        <div class="mb-2">
+          <%= render "products/star_rating" %>
+          <p class="mt-3"><span class="line-through text-lg">£95.99 GBP</span> <span class="font-bold text-xl px-2">£47.99 GBP</span> <span class="bg-red-700 text-white rounded-full px-3 py-0.5">Sale</span></p>
+          <p class="text-sm mt-1 text-gray-500">Tax included. Free <a href="/policies/shipping-policy" class="underline">Shipping</a>.</p>
+        </div>
+        <div class="mb-4">
+          <span class="font-bold text-gray-700 dark:text-gray-300">Select Color:</span>
+          <div class="flex items-center mt-2">
+            <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Blue</button>
+            <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">Orange</button>
+          </div>
+        </div>
+        <div class="mb-4">
+          <span class="font-bold text-gray-700 dark:text-gray-300">Select Size:</span>
+          <div class="flex items-center mt-2">
+            <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">S</button>
+            <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">M</button>
+            <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">L</button>
+            <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">XL</button>
+            <button class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-white py-2 px-4 rounded-full font-bold mr-2 hover:bg-gray-400 dark:hover:bg-gray-600">XXL</button>
+          </div>
+        </div>
+        <div class="mb-4">
+          <label for="quantity-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantity:</label>
+          <div class="relative flex items-center max-w-[8rem]">
+            <button type="button" id="decrement-button" data-input-counter-decrement="quantity-input" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+              <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
+              </svg>
+            </button>
+            <input type="text" id="quantity-input" data-input-counter aria-describedby="helper-text-explanation" class="bg-gray-50 border-x-0 border-gray-300 h-10 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-10 py-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="1" value="1" required />
+            <button type="button" id="increment-button" data-input-counter-increment="quantity-input" class="bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:border-gray-600 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 dark:focus:ring-gray-700 focus:ring-2 focus:outline-none">
+              <svg class="w-3 h-3 text-gray-900 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>
+              </svg>
+            </button>
+          </div>
+          <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Limited stock! 🔥 6 people are viewing this and 4 recently purchased it.</p>
+        </div>
+        <div class="w-full -mx-2 mb-8 px-2 pt-4">
+          <button class="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

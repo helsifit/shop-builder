@@ -1,6 +1,8 @@
 <%= render "hero" %>
 <%= render "testimonials" %>
-<%= render "featuring_product" %>
-<%= render "products" %>
+<% @featuring_products.each do |product| %>
+  <%= render "products/featuring_product", product: %>
+<% end %>
+<%= render "products/products", products: @products %>
 <%= render "about_us" %>
 <%= render "contact_us" %>
