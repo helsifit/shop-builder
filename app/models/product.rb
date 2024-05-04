@@ -1,13 +1,13 @@
 Product = Struct.new("Product", :handle, :title, :price, :branded, :colors, :sizes, :sale, :featuring_product, :limited_stock_message, keyword_init: true) do
-  DATA = YAML.load_file(Rails.root.join("config", "products.yml")).freeze
-  IMAGE_EXTNAMES = %w[.jpg .webp .png].to_set.freeze
+  self::DATA = YAML.load_file(Rails.root.join("config", "products.yml")).freeze
+  self::IMAGE_EXTNAMES = %w[.jpg .webp .png].to_set.freeze
 
   def self.all
-    @all ||= DATA.map { |handle, product| new(handle:, **product) }
+    @all ||= Product::DATA.map { |handle, product| new(handle:, **product) }
   end
 
   def self.find(handle)
-    new(handle:, **DATA.fetch(handle))
+    new(handle:, **Product::DATA.fetch(handle))
   end
 
   def to_param
@@ -20,7 +20,7 @@ Product = Struct.new("Product", :handle, :title, :price, :branded, :colors, :siz
 
   def image_srcs
     Dir.foreach(Rails.root.join("public", "img", "products", handle, "main")).filter_map do |filename|
-      "/img/products/#{handle}/main/#{filename}" if File.extname(filename).in?(IMAGE_EXTNAMES)
+      "/img/products/#{handle}/main/#{filename}" if File.extname(filename).in?(Product::IMAGE_EXTNAMES)
     end
   end
 
