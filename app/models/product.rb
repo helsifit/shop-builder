@@ -1,6 +1,6 @@
-Product = Struct.new("Product", :handle, :title, :price, :branded, :colors, :size, :sale, :featuring_product, :limited_stock_message, keyword_init: true) do
+Product = Struct.new("Product", :handle, :title, :price, :branded, :colors, :sizes, :sale, :featuring_product, :limited_stock_message, keyword_init: true) do
   DATA = YAML.load_file(Rails.root.join("config", "products.yml")).freeze
-  self::IMAGE_EXTNAMES = %w[.jpg .webp .png].to_set.freeze
+  IMAGE_EXTNAMES = %w[.jpg .webp .png].to_set.freeze
 
   def self.all
     @all ||= DATA.map { |handle, product| new(handle:, **product) }
@@ -18,10 +18,14 @@ Product = Struct.new("Product", :handle, :title, :price, :branded, :colors, :siz
     "products/product"
   end
 
+  def image_srcs
+    Dir.foreach(Rails.root.join("public", "img", "products", handle, "main")).filter_map do |filename|
+      "/img/products/#{handle}/main/#{filename}" if File.extname(filename).in?(IMAGE_EXTNAMES)
+    end
+  end
+
   def first_image_src
-    filename = Dir.foreach(Rails.root.join("public", "img", "products", handle, "main")).detect { |filename| File.extname(filename).in?(IMAGE_EXTNAMES) }
-    return unless filename
-    "/img/products/#{handle}/main/#{filename}"
+    image_srcs.first
   end
 
   def outdated_price(currency = "GBP")
