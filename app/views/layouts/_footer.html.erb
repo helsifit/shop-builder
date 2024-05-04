@@ -1,0 +1,26 @@
+<footer id="footer" class="bg-indigo-800 text-xl text-white">
+  <section class="mx-auto flex max-w-4xl flex-col p-4 sm:flex-row sm:justify-between">
+    <address>
+      <h2>HelsiFit</h2>
+      Monday–Friday<br />
+      9am–5pm EST<br />
+      Email:
+      <a href="mailto:info@helsifit.com">info@helsifit.com</a>
+    </address>
+    <nav class="hidden flex-col gap-2 md:flex" aria-label="footer">
+      <a href="#products" class="hover:opacity-90">Shop</a>
+      <a href="#testimonials" class="hover:opacity-90">Reviews</a>
+      <a href="#contact" class="hover:opacity-90">Contact Us</a>
+    </nav>
+    <div class="flex flex-col sm:gap-2">
+      <p class="text-right">Copyright &copy; <span id="year">2022</span></p>
+      <p class="text-right">All Rights Reserved</p>
+      <script>
+        const year = document.getElementById('year');
+        const thisYear = new Date().getFullYear();
+        year.setAttribute('datetime', thisYear);
+        year.textContent = thisYear;
+      </script>
+    </div>
+  </section>
+</footer>

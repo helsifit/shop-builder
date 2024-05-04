@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+@layer utilities {
+  .section-min-height {
+    min-height: calc(100vh - 68px)
+  }
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+  .toggle-btn {
+    @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:-rotate-[180deg]
   }
 }
-
-*/

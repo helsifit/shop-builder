@@ -1,19 +1,20 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" class="sm:scroll-smooth">
   <head>
-    <title>ShopBuilder</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HelsiFit</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+    <script src="js/flowbite.min.js" defer></script>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class="min-h-screen bg-slate-50 dark:bg-black dark:text-white">
+    <%= render "layouts/header" %>
+    <main class="mx-auto max-w-4xl">
       <%= yield %>
     </main>
+    <%= render "layouts/footer" %>
   </body>
 </html>
